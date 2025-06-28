@@ -171,6 +171,16 @@ namespace CSharpSimpleCalculator
             }
         }
 
+        private void buttonRoot_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonPow_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         private void UpdateLabel()
         {
@@ -185,7 +195,7 @@ namespace CSharpSimpleCalculator
                 value = new stringNumber();
             }
         }
-
+        
         private void calculation()
         {
             if (operation.Count < 3) return;
@@ -214,7 +224,7 @@ namespace CSharpSimpleCalculator
             operation.Clear();
         }
 
-
+        
     }
     public class stringNumber
     {

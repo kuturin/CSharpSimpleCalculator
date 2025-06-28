@@ -46,6 +46,8 @@
             this.buttonAdd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonDot = new System.Windows.Forms.Button();
+            this.buttonRoot = new System.Windows.Forms.Button();
+            this.buttonPow = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -247,11 +249,35 @@
             this.buttonDot.UseVisualStyleBackColor = true;
             this.buttonDot.Click += new System.EventHandler(this.buttonDot_Click);
             // 
+            // buttonRoot
+            // 
+            this.buttonRoot.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonRoot.Location = new System.Drawing.Point(474, 340);
+            this.buttonRoot.Name = "buttonRoot";
+            this.buttonRoot.Size = new System.Drawing.Size(73, 68);
+            this.buttonRoot.TabIndex = 26;
+            this.buttonRoot.Text = "√";
+            this.buttonRoot.UseVisualStyleBackColor = true;
+            this.buttonRoot.Click += new System.EventHandler(this.buttonRoot_Click);
+            // 
+            // buttonPow
+            // 
+            this.buttonPow.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonPow.Location = new System.Drawing.Point(474, 440);
+            this.buttonPow.Name = "buttonPow";
+            this.buttonPow.Size = new System.Drawing.Size(73, 68);
+            this.buttonPow.TabIndex = 27;
+            this.buttonPow.Text = "^\r\n";
+            this.buttonPow.UseVisualStyleBackColor = true;
+            this.buttonPow.Click += new System.EventHandler(this.buttonPow_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 539);
+            this.Controls.Add(this.buttonPow);
+            this.Controls.Add(this.buttonRoot);
             this.Controls.Add(this.buttonDot);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonAdd);
@@ -298,6 +324,8 @@
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonDot;
+        private System.Windows.Forms.Button buttonRoot;
+        private System.Windows.Forms.Button buttonPow;
     }
 }
 
