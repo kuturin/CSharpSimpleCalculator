@@ -50,6 +50,7 @@
             this.buttonPow = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.buttonLog = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -299,11 +300,23 @@
             this.label2.TabIndex = 31;
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // buttonLog
+            // 
+            this.buttonLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonLog.Location = new System.Drawing.Point(585, 307);
+            this.buttonLog.Name = "buttonLog";
+            this.buttonLog.Size = new System.Drawing.Size(175, 68);
+            this.buttonLog.TabIndex = 32;
+            this.buttonLog.Text = "log a(b)";
+            this.buttonLog.UseVisualStyleBackColor = true;
+            this.buttonLog.Click += new System.EventHandler(this.buttonLog_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 613);
+            this.Controls.Add(this.buttonLog);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.buttonPow);
@@ -359,6 +372,7 @@
         private System.Windows.Forms.Button buttonPow;
         private System.Windows.Forms.Button buttonReset;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonLog;
     }
 }
 

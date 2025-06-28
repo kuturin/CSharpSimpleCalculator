@@ -95,6 +95,8 @@ namespace CSharpSimpleCalculator
             UpdateLabel();
         }
 
+        
+
         private void buttonCE_Click(object sender, EventArgs e)
         {
             value.RemoveDigit();
@@ -127,20 +129,13 @@ namespace CSharpSimpleCalculator
             }
             
             calculation();
-            
-
-
-
-
-
-
         }
 
         private void buttonDivide_Click(object sender, EventArgs e)
         {
             
             endOfNumber();
-            if (operation.Count > 0 && "+-*/^√".IndexOf(operation[operation.Count - 1]) == -1)
+            if (operation.Count > 0 && "+-*/^√log".IndexOf(operation[operation.Count - 1]) == -1)
             {
                 operation.Add("/");
             }
@@ -150,7 +145,7 @@ namespace CSharpSimpleCalculator
         private void buttonMulti_Click(object sender, EventArgs e)
         {
             endOfNumber();
-            if (operation.Count > 0 && "+-*/^√".IndexOf(operation[operation.Count - 1]) == -1)
+            if (operation.Count > 0 && "+-*/^√log".IndexOf(operation[operation.Count - 1]) == -1)
             {
                 operation.Add("*");
                 
@@ -167,7 +162,7 @@ namespace CSharpSimpleCalculator
                 return;
             }
             endOfNumber();
-            if (operation.Count > 0 && "+-*/^√".IndexOf(operation[operation.Count - 1]) == -1)
+            if (operation.Count > 0 && "+-*/^√log".IndexOf(operation[operation.Count - 1]) == -1)
             {
                 operation.Add("-");
                 
@@ -177,7 +172,7 @@ namespace CSharpSimpleCalculator
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             endOfNumber();
-            if (operation.Count > 0 && "+-*/^√".IndexOf(operation[operation.Count - 1]) == -1)
+            if (operation.Count > 0 && "+-*/^√log".IndexOf(operation[operation.Count - 1]) == -1)
             {
                 operation.Add("+");
                 
@@ -187,7 +182,7 @@ namespace CSharpSimpleCalculator
         private void buttonRoot_Click(object sender, EventArgs e)
         {
             endOfNumber();
-            if (operation.Count > 0 && "+-*/^√".IndexOf(operation[operation.Count - 1]) == -1)
+            if (operation.Count > 0 && "+-*/^√log".IndexOf(operation[operation.Count - 1]) == -1)
             {
                 operation.Add("√");
             }
@@ -198,9 +193,18 @@ namespace CSharpSimpleCalculator
         private void buttonPow_Click(object sender, EventArgs e)
         {
             endOfNumber();
-            if (operation.Count > 0 && "+-*/^".IndexOf(operation[operation.Count - 1]) == -1)
+            if (operation.Count > 0 && "+-*/^√log".IndexOf(operation[operation.Count - 1]) == -1)
             {
                 operation.Add("^");
+            }
+        }
+
+        private void buttonLog_Click(object sender, EventArgs e)
+        {
+            endOfNumber();
+            if (operation.Count > 0 && "+-*/^√log".IndexOf(operation[operation.Count - 1]) == -1)
+            {
+                operation.Add("log");
             }
         }
 
@@ -223,7 +227,11 @@ namespace CSharpSimpleCalculator
                 
             }
         }
+
         
+
+       
+
         private void calculation()
         {
             if (operation.Count < 3) return;
@@ -265,6 +273,18 @@ namespace CSharpSimpleCalculator
                         }
                         else MessageBox.Show("Stopień pierwiastka nie może być ujemny");
                         break;
+                    case "log":
+                        if (nextNumber > 0 && result > 0)
+                        {
+                            result = Math.Log(result, nextNumber);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Podstawa logarytmu i liczba muszą być większe od zera.");
+                            return;
+                        }
+                        break;
+
                 }
             }
             label1.Text = result.ToString();
