@@ -154,7 +154,7 @@ namespace CSharpSimpleCalculator
 
         private void buttonSub_Click(object sender, EventArgs e)
         {
-            if (value.StringValue == "")
+            if (value.StringValue == "" && operation.Count!=1)
             {
                 value.AddDigit("-");
                 UpdateLabel();
