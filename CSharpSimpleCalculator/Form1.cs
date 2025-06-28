@@ -133,7 +133,7 @@ namespace CSharpSimpleCalculator
         private void buttonDivide_Click(object sender, EventArgs e)
         {
             endOfNumber();
-            if (operation.Count > 0 && "+-*/".IndexOf(operation[operation.Count - 1]) == -1)
+            if (operation.Count > 0 && "+-*/^".IndexOf(operation[operation.Count - 1]) == -1)
             {
                 operation.Add("/");
             }
@@ -143,7 +143,7 @@ namespace CSharpSimpleCalculator
         private void buttonMulti_Click(object sender, EventArgs e)
         {
             endOfNumber();
-            if (operation.Count > 0 && "+-*/".IndexOf(operation[operation.Count - 1]) == -1)
+            if (operation.Count > 0 && "+-*/^".IndexOf(operation[operation.Count - 1]) == -1)
             {
                 operation.Add("*");
                 
@@ -154,7 +154,7 @@ namespace CSharpSimpleCalculator
         private void buttonSub_Click(object sender, EventArgs e)
         {
             endOfNumber();
-            if (operation.Count > 0 && "+-*/".IndexOf(operation[operation.Count - 1]) == -1)
+            if (operation.Count > 0 && "+-*/^".IndexOf(operation[operation.Count - 1]) == -1)
             {
                 operation.Add("-");
                 
@@ -164,7 +164,7 @@ namespace CSharpSimpleCalculator
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             endOfNumber();
-            if (operation.Count > 0 && "+-*/".IndexOf(operation[operation.Count - 1]) == -1)
+            if (operation.Count > 0 && "+-*/^".IndexOf(operation[operation.Count - 1]) == -1)
             {
                 operation.Add("+");
                 
@@ -173,12 +173,17 @@ namespace CSharpSimpleCalculator
 
         private void buttonRoot_Click(object sender, EventArgs e)
         {
+            
 
         }
 
         private void buttonPow_Click(object sender, EventArgs e)
         {
-
+            endOfNumber();
+            if (operation.Count > 0 && "+-*/^".IndexOf(operation[operation.Count - 1]) == -1)
+            {
+                operation.Add("^");
+            }
         }
 
 
@@ -217,6 +222,7 @@ namespace CSharpSimpleCalculator
                         if (nextNumber != 0) result /= nextNumber;
                         else MessageBox.Show("Nie można dzielić przez zero.");
                         break;
+                    case "^": result = Math.Pow(result, nextNumber); break;
                 }
             }
             label1.Text = result.ToString();
