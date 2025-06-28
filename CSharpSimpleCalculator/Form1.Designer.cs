@@ -235,9 +235,10 @@
             this.label1.Location = new System.Drawing.Point(55, 9);
             this.label1.MinimumSize = new System.Drawing.Size(600, 80);
             this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label1.Size = new System.Drawing.Size(600, 80);
             this.label1.TabIndex = 24;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // buttonDot
             // 

@@ -17,6 +17,7 @@ namespace CSharpSimpleCalculator
         stringNumber value = new stringNumber(); 
         List<string> operation = new List<string>();
         
+        
 
         public Form1()
         {
@@ -161,7 +162,7 @@ namespace CSharpSimpleCalculator
         {
             if (value.StringValue == "" && operation.Count!=1)
             {
-                value.AddDigit("-");
+                value.AddDigit("-"); 
                 UpdateLabel();
                 return;
             }
@@ -206,7 +207,9 @@ namespace CSharpSimpleCalculator
 
         private void UpdateLabel()
         {
+            
             label1.Text = value.StringValue;
+
         }
 
         private void endOfNumber()
@@ -215,6 +218,7 @@ namespace CSharpSimpleCalculator
             {
                 operation.Add(value.StringValue);
                 value = new stringNumber();
+                
             }
         }
         
@@ -223,12 +227,13 @@ namespace CSharpSimpleCalculator
             if (operation.Count < 3) return;
 
             double result;
-            if (!double.TryParse(operation[0], out result)) return;
+            if (!double.TryParse(operation[0], System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out result)) return;
+
 
             for (int i = 1; i < operation.Count - 1; i += 2)
             {
                 string op = operation[i];
-                if (!double.TryParse(operation[i + 1], out double nextNumber)) continue;
+                if (!double.TryParse(operation[i + 1], System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out double nextNumber)) continue;
 
                 switch (op)
                 {
@@ -275,9 +280,23 @@ namespace CSharpSimpleCalculator
 
         public string StringValue => stringValue;
 
+
+
         public void AddDigit(string digit)
         {
-            this.stringValue += digit;
+            if (digit == ".")
+            {
+                if (stringValue.Contains("."))
+                    return; // już jest kropka, nie dodawaj kolejnej
+                if (stringValue == "" || stringValue == "-")
+                    stringValue += "0."; // zaczynamy od 0.
+                else
+                    stringValue += ".";
+            }
+            else
+            {
+                stringValue += digit;
+            }
         }
         public void RemoveDigit()
         {
