@@ -209,6 +209,8 @@ namespace CSharpSimpleCalculator
         {
             
             label1.Text = value.StringValue;
+            string stringLabel = string.Join(" ", operation);
+            label2.Text = stringLabel + " " + value.StringValue;
 
         }
 
@@ -269,8 +271,6 @@ namespace CSharpSimpleCalculator
             value = new stringNumber();
             operation.Clear();
         }
-
-       
 
         
     }
