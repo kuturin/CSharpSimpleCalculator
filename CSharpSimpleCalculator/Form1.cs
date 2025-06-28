@@ -132,8 +132,9 @@ namespace CSharpSimpleCalculator
 
         private void buttonDivide_Click(object sender, EventArgs e)
         {
+            
             endOfNumber();
-            if (operation.Count > 0 && "+-*/^".IndexOf(operation[operation.Count - 1]) == -1)
+            if (operation.Count > 0 && "+-*/^√".IndexOf(operation[operation.Count - 1]) == -1)
             {
                 operation.Add("/");
             }
@@ -143,7 +144,7 @@ namespace CSharpSimpleCalculator
         private void buttonMulti_Click(object sender, EventArgs e)
         {
             endOfNumber();
-            if (operation.Count > 0 && "+-*/^".IndexOf(operation[operation.Count - 1]) == -1)
+            if (operation.Count > 0 && "+-*/^√".IndexOf(operation[operation.Count - 1]) == -1)
             {
                 operation.Add("*");
                 
@@ -153,8 +154,14 @@ namespace CSharpSimpleCalculator
 
         private void buttonSub_Click(object sender, EventArgs e)
         {
+            if (value.StringValue == "")
+            {
+                value.AddDigit("-");
+                UpdateLabel();
+                return;
+            }
             endOfNumber();
-            if (operation.Count > 0 && "+-*/^".IndexOf(operation[operation.Count - 1]) == -1)
+            if (operation.Count > 0 && "+-*/^√".IndexOf(operation[operation.Count - 1]) == -1)
             {
                 operation.Add("-");
                 
@@ -164,7 +171,7 @@ namespace CSharpSimpleCalculator
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             endOfNumber();
-            if (operation.Count > 0 && "+-*/^".IndexOf(operation[operation.Count - 1]) == -1)
+            if (operation.Count > 0 && "+-*/^√".IndexOf(operation[operation.Count - 1]) == -1)
             {
                 operation.Add("+");
                 
@@ -173,7 +180,15 @@ namespace CSharpSimpleCalculator
 
         private void buttonRoot_Click(object sender, EventArgs e)
         {
-            
+            endOfNumber();
+            if (operation.Count > 0 && "+-*/^√".IndexOf(operation[operation.Count - 1]) == -1)
+            {
+                operation.Add("√");
+            }
+            else
+            {
+                MessageBox.Show("Nie można użyć pierwiastka bez liczby.");
+            }
 
         }
 
@@ -223,6 +238,24 @@ namespace CSharpSimpleCalculator
                         else MessageBox.Show("Nie można dzielić przez zero.");
                         break;
                     case "^": result = Math.Pow(result, nextNumber); break;
+                    case "√":
+                        if (nextNumber > 0) 
+                        {
+                            if (nextNumber%2 == 0 && result < 0)
+                            {
+                                MessageBox.Show("Nie można obliczyć pierwiastka parzystego z liczby ujemnej.");
+                                return;
+                            }
+                            else
+                            {
+                                result = Math.Pow(result, (1.0 / nextNumber));
+                            }
+
+
+
+                        }
+                        else MessageBox.Show("Stopień pierwiastka nie może być ujemny");
+                        break;
                 }
             }
             label1.Text = result.ToString();

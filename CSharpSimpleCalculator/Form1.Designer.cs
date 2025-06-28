@@ -251,12 +251,12 @@
             // 
             // buttonRoot
             // 
-            this.buttonRoot.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonRoot.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.buttonRoot.Location = new System.Drawing.Point(474, 340);
             this.buttonRoot.Name = "buttonRoot";
             this.buttonRoot.Size = new System.Drawing.Size(73, 68);
             this.buttonRoot.TabIndex = 26;
-            this.buttonRoot.Text = "√";
+            this.buttonRoot.Text = "y√x";
             this.buttonRoot.UseVisualStyleBackColor = true;
             this.buttonRoot.Click += new System.EventHandler(this.buttonRoot_Click);
             // 
