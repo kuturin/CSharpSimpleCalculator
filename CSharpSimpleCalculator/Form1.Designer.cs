@@ -48,6 +48,7 @@
             this.buttonDot = new System.Windows.Forms.Button();
             this.buttonRoot = new System.Windows.Forms.Button();
             this.buttonPow = new System.Windows.Forms.Button();
+            this.buttonReset = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -271,11 +272,23 @@
             this.buttonPow.UseVisualStyleBackColor = true;
             this.buttonPow.Click += new System.EventHandler(this.buttonPow_Click);
             // 
+            // buttonReset
+            // 
+            this.buttonReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonReset.Location = new System.Drawing.Point(579, 145);
+            this.buttonReset.Name = "buttonReset";
+            this.buttonReset.Size = new System.Drawing.Size(175, 68);
+            this.buttonReset.TabIndex = 29;
+            this.buttonReset.Text = "reset";
+            this.buttonReset.UseVisualStyleBackColor = true;
+            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 539);
+            this.ClientSize = new System.Drawing.Size(796, 613);
+            this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.buttonPow);
             this.Controls.Add(this.buttonRoot);
             this.Controls.Add(this.buttonDot);
@@ -326,6 +339,7 @@
         private System.Windows.Forms.Button buttonDot;
         private System.Windows.Forms.Button buttonRoot;
         private System.Windows.Forms.Button buttonPow;
+        private System.Windows.Forms.Button buttonReset;
     }
 }
 

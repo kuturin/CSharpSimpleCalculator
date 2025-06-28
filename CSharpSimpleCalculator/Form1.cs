@@ -100,7 +100,12 @@ namespace CSharpSimpleCalculator
             UpdateLabel();
         }
 
-        
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            value = new stringNumber(); // Reset the stringNumber instance
+            operation.Clear(); // Clear the operation list 
+            UpdateLabel(); // Update the label to show the reset state
+        }
 
 
 
@@ -185,10 +190,7 @@ namespace CSharpSimpleCalculator
             {
                 operation.Add("√");
             }
-            else
-            {
-                MessageBox.Show("Nie można użyć pierwiastka bez liczby.");
-            }
+           
 
         }
 
@@ -262,6 +264,8 @@ namespace CSharpSimpleCalculator
             value = new stringNumber();
             operation.Clear();
         }
+
+       
 
         
     }
