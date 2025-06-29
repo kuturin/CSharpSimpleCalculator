@@ -36,7 +36,6 @@ The calculator supports basic arithmetic operations, powers, roots, and logarith
 
 - Logarithm: To calculate log<sub>b</sub>(a), enter `a`, press `log`, then enter `b`, and press `=`.
 - Roots: To calculate the n-th root of a, enter `a`, press `√`, then enter `n`, and press `=`.
-- Only one decimal point is allowed per number.
 - Negative numbers are supported.
 
 ## Future Plans
